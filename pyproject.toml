@@ -1,0 +1,28 @@
+[project]
+name = "aevorium"
+version = "0.1.0"
+description = "site of mineacraft project"
+authors = [
+    {name = "Kilicin"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django (>=6.0,<7.0)",
+    "mysqlclient (>=2.2.7,<3.0.0)",
+    "python-dotenv (>=1.2.1,<2.0.0)",
+    "phpmyadmin (>=0.0.1,<0.0.2)",
+    "django-rest-framework (>=0.1.0,<0.2.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "django-debug-toolbar (>=6.1.0,<7.0.0)",
+    "django-extensions (>=4.1,<5.0)",
+    "ipython (>=9.8.0,<10.0.0)"
+]

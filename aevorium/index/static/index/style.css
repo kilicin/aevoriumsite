@@ -1,0 +1,345 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #0B0811;
+    color: white;
+    overflow-x: hidden;
+}
+
+a {
+    font-size: 1.9rem;
+}
+
+a,a:hover {
+    text-decoration: none;
+    font-family: 'Actay';
+    color: white;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    display: inline;
+}
+
+header {
+    background: #4D3877;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.09) 0%, rgba(77, 56, 119, 0) 100%);
+    backdrop-filter: blur(15px);
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+header .logo {
+    font-family: 'Bounded';
+    font-size: 2rem;
+    line-height: 100%;
+}
+
+header .link {
+    font-family: 'Actay';
+    font-size: 1.9rem;
+    color: #FFFFFF73;
+}
+
+header a.link:hover, header .logo:hover {
+    color: white;
+    text-shadow: 0 0 20px #fff;
+    transition: all 100ms ease-out;
+}
+
+header img.link:hover {
+    filter: drop-shadow(0 0 20px #fff);
+    transition: all 100ms ease-out;
+}
+
+.general {
+    overflow: hidden;
+}
+
+.general h1, h2 {
+    font-family: 'Bounded Bold';
+    font-weight: 200;
+    font-size: 16rem;
+    text-shadow: 0px 5px 23px #FFFFFF47;
+}
+
+.general__skin {
+    right: -215px;
+    top: -15px;
+    pointer-events: none;
+}
+
+.general__sphere {
+    border-radius: 50%;
+    background: linear-gradient(113.9deg, #444EE1 12.16%, #0B0811 39.38%);
+    width: 1119px;
+    height: 1119px;
+    opacity: 24%;
+    z-index: 0;
+    right: -50%;
+}
+
+.general__text {
+    font-family: 'Bounded';
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 42px;
+    color: #444EE1C2;
+    width: 43%;
+    text-transform: uppercase;
+    margin-top: 90px;
+    margin-bottom: 143px;
+}
+
+.general__start {
+    display:inline-block;
+    font-size: 2.5rem;
+    padding: 21px 45px;
+    color: #EEE7FF;
+    background: linear-gradient(94.52deg, #444EE1 0%, #132C97 100%);
+    border-radius: 38px;
+    width: auto;
+    transition: all 100ms ease-out;
+}
+
+.general__start:hover {
+    
+    background: linear-gradient(94.52deg, #6D76F9 0%, #1F43DA 100%);
+    box-shadow: 0px 0px 28.1px 0px #3D53F3;
+    font-size: 2.5rem;
+}
+
+.general__desc {
+    color: #FFFFFF40;
+    font-size: 1.4rem;
+    font-family: 'Actay';
+    margin-top: 118px;
+    margin-bottom: 130px;
+}
+
+.general__eclipse_1,.general__eclipse_2 {
+    box-shadow: 0px 0px 107px 77px #4E4E4E57;
+    border-radius: 120px;
+}
+
+.general__eclipse_1 {
+    left: 50%;
+    top: 20%;
+}
+
+.general__eclipse_2 {
+    left: 3%;
+    top: 56%;
+}
+
+.servers {
+    margin-bottom: 146px;
+    overflow-y: hidden;
+}
+
+.servers__total-online {
+    background: linear-gradient(90.6deg, rgba(217, 217, 217, 0.33) 0.07%, rgba(115, 115, 115, 0.24) 135.1%);
+    border: 1px solid #FFFFFF12;
+    border-radius: 38px;
+    width: 33%;
+    margin-top: 6.6rem;
+    padding: 16px
+}
+
+.servers__total-online > ul {
+    margin: 0;
+}
+
+.servers__total-online_marker {
+    position: relative;
+    font-size: 1.5rem;
+    font-family: 'Bounded';
+}
+
+.servers__total-online_marker::marker {
+    color: transparent;
+} 
+
+.servers__total-online_marker::before {
+    content: "•";
+    position: absolute;
+    line-height: 32px;
+    top: -6px;
+    left: -30px;
+    font-size: 7.2rem;
+    background: linear-gradient(122.01deg, #219704 -5.33%, rgba(49, 129, 28, 0.78) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.servers__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: min-content;
+    margin-top: 6.6rem;
+    gap: 24px;
+
+}
+
+.servers__list .servers__total-online_marker {
+    font-size: 1.3rem;
+    color: #333390;
+}
+
+.servers__list .servers__total-online_marker::before {
+    left: -15px;
+    font-size: 3.2rem;
+}
+
+.servers__list .servers__total-online {
+    margin-top: 22px;
+    background: linear-gradient(100.49deg, #D9D9D9 2.79%, #7272C5 115.8%);
+    display: inline-block;
+    width: auto;
+}
+
+.servers__list .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #333390;
+    border-radius: 38px;
+    box-shadow: 0px 4px 41.8px 0px #242466;
+}
+
+.servers__list .card:hover {
+    background: linear-gradient(100.17deg, #5A5AF0 -10.19%, #2D2D8D 98.6%);
+}
+
+.card h5 {
+    font-size: 4rem;
+    font-family: 'Bounded';
+    font-weight: 900;
+    line-height: 100%;
+}
+
+.card p {
+    font-size: 1.5rem;
+    color: #FFFFFFC2;
+    font-family: 'Bounded';
+    font-weight: 400;
+    line-height: 100%;
+    height: 80px;
+    margin: 0;
+}
+
+.servers__list .card_info {
+    padding: 24px 0px 0px 19px;
+}
+
+.servers__list .card img {
+    margin-left: auto;
+}
+
+.servers__list .servers__total-online > ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.servers .general__sphere {
+    border-radius: 50%;
+    background: linear-gradient(166.44deg, #444EE1 9.26%, #0B0811 55.02%);
+    width: 1623px;
+    height: 1623px;
+    opacity: 24%;
+    z-index: -1;
+    left: -42%;
+    top: -35px;
+}
+
+.servers .general__eclipse_1 {
+    left: 8%;
+    top: 10%;
+}
+
+.servers .general__eclipse_2 {
+    right: -100%;
+    top: 50%;
+    box-shadow: 0px 0px 400px 200px #181840AD;
+    border-radius: 120px;
+}
+
+.shop__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: min-content;
+    gap: 41px 44px;
+}
+
+.shop__list .card {
+    background: linear-gradient(206.95deg, #4848CC 4.79%, #242466 133.14%);
+    border: 1px solid #FFFFFF21;
+    text-align: center;
+    height: 250px;
+    padding: 25px 19px 12px 19px;
+    border-radius: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 100ms ease-out;
+
+}
+
+.shop__list .card_buy {
+    width: 100%;
+    appearance: none;
+    background: linear-gradient(272.12deg, rgba(36, 132, 12, 0.44) -58.55%, rgba(51, 255, 0, 0.44) 95.07%);
+    color: white;
+    box-shadow: 0px 0px 11.5px 0px #2B6544;
+    font-size: 1.8rem;
+    font-family: 'Bounded';
+    border-radius: 38px;
+    border: 0;
+    padding: 2px 0 5px 0;
+    transition: all 100ms ease-out;
+}
+
+.shop__list .card p {
+    font-size: 1.5rem;
+    font-family: 'Bounded';
+    margin-top: 19px;
+}
+
+.shop__list .card h5 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    font-family: 'Bounded';
+}
+
+.shop__list .card:hover {
+    background: linear-gradient(191.2deg, #5A5AF0 4.08%, #2D2D8D 145.5%);
+    box-shadow: 0px 4px 83.1px 0px #2C2C86;
+}
+
+.shop__list .card_buy:hover {
+    background: linear-gradient(272.12deg, rgba(36, 132, 12, 0.57) -58.55%, rgba(0, 255, 0, 0.57) 95.07%);
+}
+
+.shop .general__sphere {
+    border-radius: 50%;
+    background: linear-gradient(172.38deg, #0B0811 31.72%, #444EE1 79.17%);
+    width: 1623px;
+    height: 1623px;
+    opacity: 24%;
+    z-index: -1;
+    left: -50%;
+    top: -90%;
+}
+
+.shop .general__eclipse_2 {
+    right: -100%;
+    top: 90%;
+    box-shadow: 0px 0px 400px 200px #181840AD;
+    border-radius: 120px;
+}

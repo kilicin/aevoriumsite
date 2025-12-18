@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Bounded";
+    font-weight: 600;
+    src: url("fonts/Bounded-Regular.ttf"); 
+}
+
+@font-face {
+    font-family: "Bounded Bold";
+    font-weight: 900;
+    src: url("fonts/Bounded-Black.ttf"); 
+}
+
+@font-face {
+    font-family: "Actay";
+    font-weight: 700;
+    src: url("fonts/ActayWide-Bold.otf"); 
+}

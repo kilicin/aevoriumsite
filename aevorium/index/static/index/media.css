@@ -1,0 +1,22 @@
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    html {
+        font-size: 9px;
+    }
+
+    img {
+        zoom: 0.9;
+    }
+
+    .general__skin {
+        right: -230px;
+        top: -15px;
+    }
+
+    .general__sphere {
+        right: -70%;
+    }
+
+    .servers__list .servers__total-online {
+        margin-top: 5px;
+    }
+}

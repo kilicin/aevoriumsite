@@ -1,0 +1,88 @@
+{% extends "index/layout.html" %}
+{% load static %}
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+
+<div class="general">
+    <div class="container relative">
+        <div class="general__figures">
+            <div class="absolute general__sphere"></div>
+            <div class="absolute general__eclipse_1"></div>
+            <div class="absolute general__eclipse_2"></div>
+        </div>
+        <img class="absolute general__skin" src="{% static 'index/img/general__skin.png' %}" alt="">
+        <h1>Aevorium</h1>
+        <p class="general__text">Получите полный доступ ко всем возможностям Aevorium. Наш лаунчер — это ключ к стабильной игре и мгновенному доступу ко всем серверам.</p>
+        <a class="general__start" href="">Начать игру</a>
+        <p class="general__desc">Aevorium не связан с Mojang AB, все средства идут на развитие проекта</p>
+    </div>
+</div>
+<div class="servers" id="servers">
+    <div class="container relative">
+        <div class="servers__figures">
+            <div class="absolute general__sphere"></div>
+            <div class="absolute general__eclipse_1"></div>
+            <div class="absolute general__eclipse_2"></div>
+        </div>
+        <h2>Серверы</h2>
+        <div class="servers__total-online">
+            <ul>
+                <li class="servers__total-online_marker">Общий онлайн: {{ totalonline }}</li>
+            </ul>
+        </div>
+        <div class="servers__list">
+            <div class="card">
+                <div class="card_info">
+                    <h5>Название</h5>
+                    <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
+                    <div class="servers__total-online">
+                        <ul>
+                            <li class="servers__total-online_marker">{{ online_rp }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="{% static 'index/img/server_photo_cover.png' %}" alt="">
+            </div>
+            <div class="card">
+                <div class="card_info">
+                    <h5>Название</h5>
+                    <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
+                    <div class="servers__total-online">
+                        <ul>
+                            <li class="servers__total-online_marker">{{ online_rp }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="{% static 'index/img/server_photo_cover.png' %}" alt="">
+            </div>
+            <div class="card">
+                <div class="card_info">
+                    <h5>Название</h5>
+                    <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
+                    <div class="servers__total-online">
+                        <ul>
+                            <li class="servers__total-online_marker">{{ online_rp }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="{% static 'index/img/server_photo_cover.png' %}" alt="">
+            </div>
+            <div class="card">
+                <div class="card_info">
+                    <h5>Название</h5>
+                    <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
+                    <div class="servers__total-online">
+                        <ul>
+                            <li class="servers__total-online_marker">{{ online_rp }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="{% static 'index/img/server_photo_cover.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
