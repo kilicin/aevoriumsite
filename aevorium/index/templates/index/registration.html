@@ -4,6 +4,28 @@
 
 {% block content %}
 
-    <a href="/">Назад</a>
+<div class="registration">
+    <div class="container relative">
+        <div class="main__figures">
+            <div class="absolute main__sphere"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form action="registration" method="POST">
+                    <h1>Регистрация</h1>
+                    {% csrf_token %}
+                    <input type="text" name="login" id="" placeholder="Игровой никнейм">
+                    <input type="email" name="email" id="" placeholder="Почта">
+                    <input type="password" name="password" id="" placeholder="Пароль">
+                    <input type="password" name="password-verify" id="" placeholder="Повторите пароль">
+                    <div class="text-end">
+                        <a href="login" class="link">У меня уже есть аккаунт</a>
+                    </div>
+                    <button type="submit" class="button w-75">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

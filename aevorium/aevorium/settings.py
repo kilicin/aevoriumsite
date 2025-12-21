@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'aevorium.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'users',           # Имя базы данных
-        'USER': 'root',            # Пользователь
-        'PASSWORD': 'r21olk6fac6s',    # Пароль
-        'HOST': 'localhost',       # Если MySQL на локальной машине
+        'NAME': 'gs138823',           # Имя базы данных
+        'USER': 'gs138823',            # Пользователь
+        'PASSWORD': 'pfF8g2j6M',    # Пароль
+        'HOST': '185.9.145.133',       # Если MySQL на локальной машине
         'PORT': '3306',            # Порт MySQL
     }
 }

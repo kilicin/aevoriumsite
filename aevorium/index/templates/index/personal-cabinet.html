@@ -1,0 +1,43 @@
+{% extends "index/layout.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+
+<div class="cabinet">
+    <div class="container relative">
+        <div class="main__figures">
+            <div class="absolute main__sphere"></div>
+        </div>
+        <h1>Кабинет</h1>
+        <div class="row">
+            <div class="col-3">
+                <div class="cabinet__character gray-back text-center position-relative">
+                    <p class="cabinet__nickname position-absolute bottom-0 start-50 translate-middle w-100">{{ login }}</p>
+                </div>
+                <button class="w-100 text-center mt-4 button gray mini">Настройки</button>
+                <form method="post">
+                    {% csrf_token %}
+                    <button class="red button mini w-100 text-center mt-4" type="submit" name="exit">Выйти</button>
+                </form>
+            </div>
+            <div class="col-3">
+                <form action="upload-skin" method="post">
+                    <button type="submit" class="button w-100">Установить скин</button>
+                </form>
+                <form action="upload-cloak" method="post">
+                    <button type="submit" class="button w-100 mt-3 mini">Установить плащ</button>
+                </form>
+            </div>
+            <div class="col-5">
+                <div class="row gray-back big m-0">
+                    <div class="col-6"><p class="cabinet__desc">Ваш баланс:</p></div>
+                    <div class="col-6"><p class="cabinet__desc text-end">1000₽</p></div>
+                </div>
+                <a href="deposit" class="button mini mt-3 w-100">Пополнить</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

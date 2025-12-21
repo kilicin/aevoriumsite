@@ -17,10 +17,9 @@
             <div class="row justify-content-between">
                 <div class="col-auto row">
                     <div class="col-auto"><a href="/" class="logo">Aevorium</a></div>
-                    <div class="col-auto"><a href="/" class="link">Главная</a></div>
-                    <div class="col-auto"><a href="#servers" class="link">Серверы</a></div>
                     <div class="col-auto"><a href="shop" class="link">Магазин</a></div>
-                    <div class="col-auto"><a href="" class="link">Личный кабинет</a></div>
+                    <div class="col-auto"><a href="/#servers" class="link">Серверы</a></div>
+                    <div class="col-auto"><a href="registration" class="link">Личный кабинет</a></div>
                 </div>
                 <div class="col-auto row">
                     <div class="col-auto">
@@ -30,10 +29,10 @@
                         <a href="https://t.me/aevorium_news"><img class="link" src="{% static 'index/img/tg.png' %}" alt=""></a>
                     </div>
                     <div class="col-auto">
-                        <a href=""><img class="link" src="{% static 'index/img/tt.png' %}" alt=""></a>
+                        <a href="https://www.tiktok.com/@aevorium"><img class="link" src="{% static 'index/img/tt.png' %}" alt=""></a>
                     </div>
                     <div class="col-auto">
-                        <a href=""><img class="link" src="{% static 'index/img/yt.png' %}" alt=""></a>
+                        <a href="https://www.youtube.com/@Aevorium"><img class="link" src="{% static 'index/img/yt.png' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -41,5 +40,41 @@
     </header>
     {% block content %}
     {%endblock%}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h5>Основное</h5>
+                    <a href="start" class="link">Начать игру</a>
+                    <a href="registration" class="link">Регистрация</a>
+                    <a href="shop" class="link">Магазин</a>
+                </div>
+                <div class="col-3">
+                    <h5>Другое</h5>
+                    <a href="/" class="link">Правила</a>
+                    <a href="/" class="link">Банлист</a>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-2">
+                    <a href="/" class="mini link">Публичная оферта</a>
+                </div>
+                <div class="col-2">
+                    <a href="/" class="mini link">Правила проекта</a>
+                </div>
+                <div class="col-2">
+                    <a href="https://t.me/aevorium_help_bot" class="mini link">Тех. поддержка</a>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <p>© Aevorium 2026. Все права защищены.</p>
+                </div>
+                <div class="col-5">
+                    <p>Not official Minecraft product. Not approved by or associated with Mojang Synergies AB.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
