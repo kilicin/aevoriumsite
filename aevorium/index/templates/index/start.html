@@ -1,0 +1,32 @@
+{% extends "index/layout.html" %}
+{% load static %}
+{% block title %}Инструкция{% endblock %}
+
+{% block content %}
+
+<div class="instruction">
+    <div class="container relative">
+        <div class="main__figures">
+            <div class="absolute main__sphere"></div>
+        </div>
+        <h1 class="text-center">Инструкция</h1>
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <div class="counter text-center">
+                    <h5>1. Регистрация</h5>
+                    <p class="instruction__desc">Создайте аккаунт, если его у вас еще нет</p>
+                    <a href="registration" class="button">Регистрация</a>
+                </div>
+            </div>
+            <div class="col-5 offset-1">
+                <div class="counter text-center">
+                    <h5>2. Установка</h5>
+                    <p class="instruction__desc">Скачайте наш лаунчер, чтобы начать игру!</p>
+                    <a href="" class="button">Установить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

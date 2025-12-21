@@ -1,0 +1,25 @@
+{% extends "index/layout.html" %}
+
+{% block title %}Восстановление{% endblock %}
+
+{% block content %}
+
+<div class="registration">
+    <div class="container relative">
+        <div class="main__figures">
+            <div class="absolute main__sphere"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form action="deposit" method="POST">
+                    <h1>Сумма пополнения</h1>
+                    {% csrf_token %}
+                    <input type="number" name="deposit" id="" placeholder="От 50 рублей">
+                    <button type="submit" class="button w-75 mt-5">Пополнить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
