@@ -14,76 +14,99 @@
         <h2>Магазин</h2>
         <p class="shop__desc">Покупайте привилегии, чтобы<br>развиваться быстрее</p>
         <div class="row shop__balance">
-            <div class="col-3"><a href="deposit" class="button">Пополнить</a></div>
+            <div class="col-3">
+                {% if login %}
+                    <a href="deposit" class="button">Пополнить</a>
+                {% else %}
+                    <a href="registration" class="button">Войти</a>
+                {% endif %}
+            </div>
             <div class="col-6">
-                <div class="row gray-back">
-                    <div class="col-6"><p class="shop__desc">Ваш баланс:</p></div>
-                    <div class="col-6"><p class="shop__desc text-end">10000000₽</p></div>
-                </div>
+                {% if login %}
+                    <div class="row gray-back">
+                        <div class="col-6"><p class="shop__desc">Ваш баланс:</p></div>
+                        <div class="col-6"><p class="shop__desc text-end">{{ balance }}₽</p></div>
+                    </div>
+                {% else %}
+                    
+                {% endif %}
             </div>
         </div>
         <div class="shop__server">
-            <h3 class="shop__server_title">Aevum RP</h3>
-            <div class="shop__list">
-                <div class="card">
-                    <div>
-                        <h5>Название</h5>
-                        <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
-                    </div>
-                    <button class="card_buy">купить</button>
+            {% for server in servers %}
+                <h3 class="shop__server_title">{{ server }}</h3>
+                <div class="shop__list">
+                    {% for donate in donates %}
+                        {% if server == donate.0 %}
+                            <div class="card">
+                                <div>
+                                    <h5>{{ donate.1.name }}</h5>
+                                    <p>{{ donate.1.mini_description }}</p>
+                                </div>
+                                <button class="card_buy" data-bs-toggle="modal" data-bs-target="#confirmModal"
+                                data-name="{{ donate.1.name }}"
+                                data-description="{{ donate.1.description }}"
+                                data-price="{{ donate.1.price }}"
+                                data-donateid="{{ donate.2 }}"
+                                >Подробнее</button>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
-                <div class="card">
-                    <div>
-                        <h5>Название</h5>
-                        <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
-                    </div>
-                    <button class="card_buy">купить</button>
-                </div>
-                <div class="card">
-                    <div>
-                        <h5>Название</h5>
-                        <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
-                    </div>
-                    <button class="card_buy">купить</button>
-                </div>
-                <div class="card">
-                    <div>
-                        <h5>Название</h5>
-                        <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
-                    </div>
-                    <button class="card_buy">купить</button>
-                </div>
-                <div class="card">
-                    <div>
-                        <h5>Название</h5>
-                        <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
-                    </div>
-                    <button class="card_buy">купить</button>
-                </div>
-                <div class="card">
-                    <div>
-                        <h5>Название</h5>
-                        <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
-                    </div>
-                    <button class="card_buy">купить</button>
-                </div>
-                <div class="card">
-                    <div>
-                        <h5>Название</h5>
-                        <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
-                    </div>
-                    <button class="card_buy">купить</button>
-                </div>
-                <div class="card">
-                    <div>
-                        <h5>Название</h5>
-                        <p>Описание писанием пиписание с воцво вцвоцо воц ззэщо зощэзощ ощз ощззщо ввцвв цвзщцв зщлцв.</p>
-                    </div>
-                    <button class="card_buy">купить</button>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
+
+{% block modal %}
+<div class="shop__modal modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content counter">
+        <div class="row">
+            <div class="col-5">
+                <h3 id="modalTitle"></h3>
+            </div>
+            <div class="col-7">
+                <div>
+                    {% if login %}
+                        <div class="row gray-back">
+                            <div class="col-6"><p class="shop__desc">Ваш баланс:</p></div>
+                            <div class="col-6"><p class="shop__desc text-end">{{ balance }}₽</p></div>
+                        </div>
+                    {% else %}
+                        <a href="registration" class="button mt-3">Войти</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <p class="mt-5" id="modalDescription"></p>
+      <div class="row mt-auto">
+        <div class="col-4"></div>
+        <div class="col-3">
+            <button type="button" class="red button mini w-100" data-bs-dismiss="modal">Отмена</button>
+        </div>
+        <div class="col-5">
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="donation_id" id="modalDonation_id">
+                <button type="submit" class="button mini w-100" id="modalPrice"></button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<script>
+    document.querySelectorAll('.card_buy').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('modalTitle').textContent = btn.dataset.name;
+            document.getElementById('modalPrice').textContent = 'Купить за ' + btn.dataset.price + '₽';
+            document.getElementById('modalDescription').textContent = btn.dataset.description;
+            document.getElementById('modalDonation_id').value = btn.dataset.donateid;
+        });
+    });
+</script>
 
 {% endblock %}

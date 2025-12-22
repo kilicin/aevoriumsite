@@ -1,7 +1,10 @@
+from tkinter.font import names
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password, check_password
+from django.core import signing
 from mcstatus import JavaServer
-from .models import Users, Servers
+from .models import *
 
 def index(request):
     data = {
@@ -22,18 +25,19 @@ def index(request):
     return render(request, 'index/index.html', data)
 
 def registration(request):
-    try:
-        user = Users.objects.get(token=request.session['token'])
-        if 'token' in request.session:
+    if 'token' in request.session:
+        try:
+            user = Users.objects.get(token=request.session['token'])
             if user.token == request.session['token']:
                 return redirect('personal-cabinet')
-    except (ValueError, Users.DoesNotExist, KeyError):
-        if request.method == 'POST':
-            if request.POST['password'] == request.POST['password-verify']:
-                Users.objects.create(email=request.POST["email"],
-                                     nickname=request.POST["login"],
-                                     password=make_password(request.POST["password"]),
-                                     token=request.POST['csrfmiddlewaretoken'])
+        except (ValueError, Users.DoesNotExist, KeyError):
+            pass
+    if request.method == 'POST':
+        if request.POST['password'] == request.POST['password-verify']:
+            Users.objects.create(email=request.POST["email"],
+                                 nickname=request.POST["login"],
+                                 password=make_password(request.POST["password"]),
+                                 token=request.POST['csrfmiddlewaretoken'])
     return render(request, 'index/registration.html')
 
 def login(request):
@@ -51,7 +55,28 @@ def login(request):
     return render(request, 'index/login.html')
 
 def shop(request):
-    return render(request, 'index/shop.html')
+    data = {
+        'login': False,
+        'donates': [],
+        'servers': [],
+    }
+
+    for donate in Donation.objects.all():
+        server = donate.server
+        data['donates'] += [[server.name, donate, signing.dumps(donate.id)]]
+
+    for server in Servers.objects.all():
+        data['servers'] += [server.name]
+
+    try:
+        if 'token' in request.session:
+            user = Users.objects.get(token=request.session['token'])
+            profile = Profile.objects.get(name=user)
+            data["login"] = True
+            data['balance'] = profile.donateBalance
+        return render(request, 'index/shop.html', data)
+    except (ValueError, Users.DoesNotExist):
+        return render(request, 'index/shop.html', data)
 
 def personal_cabinet(request):
     data = {}
@@ -61,8 +86,10 @@ def personal_cabinet(request):
             return redirect('login')
     try:
         user = Users.objects.get(token=request.session['token'])
+        profile = Profile.objects.get(name=user)
         data = {
             "login": user.nickname,
+            'donateBalance': profile.donateBalance,
         }
         return render(request, 'index/personal-cabinet.html', data)
     except (ValueError, Users.DoesNotExist):

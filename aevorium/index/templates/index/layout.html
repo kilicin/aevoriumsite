@@ -12,6 +12,8 @@
     <link rel="icon" href="{% static 'index/img/icon.svg' %}" type="image/svg+xml">
 </head>
 <body>
+    {% block modal %}
+    {% endblock %}
     <header>
         <div class="container">
             <div class="row justify-content-between">
@@ -76,5 +78,7 @@
             </div>
         </div>
     </footer>
+
+<script src="{% static 'index/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

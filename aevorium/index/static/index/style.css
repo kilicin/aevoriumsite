@@ -318,8 +318,8 @@ h1, h2 {
 }
 
 .shop__list .card p {
-    font-size: 1.5rem;
-    font-family: 'Bounded';
+    font-size: 1.8rem;
+    font-family: 'Actay';
     margin-top: 19px;
 }
 
@@ -618,4 +618,27 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 font-size: 0;
 opacity: 0;
+}
+
+.shop__modal .modal-content {
+    height: 500px;
+}
+
+.shop__modal h3 {
+    font-family: "Actay";
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.shop__modal p {
+    font-family: "Actay";
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.shop__modal .counter {
+    background: linear-gradient(90deg, rgba(48, 47, 47, 0.89) -16.06%, rgba(115, 115, 115, 0.4) 107.4%);
+    border: 1px solid #FFFFFF4A;
+    padding: 24px 72px 40px 72px;
+    border-radius: 38px;
 }
