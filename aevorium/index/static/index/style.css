@@ -642,3 +642,7 @@ opacity: 0;
     padding: 24px 72px 40px 72px;
     border-radius: 38px;
 }
+
+overflow-hidden {
+    overflow: hidden;
+}
